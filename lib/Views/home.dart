@@ -1,6 +1,12 @@
 import "package:flutter/material.dart";
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:flutter_thoviet/Views/thoChongTham.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_thoviet/Views/thoDien.dart';
+import 'package:flutter_thoviet/Views/thoDienNuoc.dart';
+import 'package:flutter_thoviet/Views/thoMoc.dart';
+import 'package:flutter_thoviet/Views/thoDienLanh.dart';
+import 'package:flutter_thoviet/Views/thongNghet.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -12,6 +18,7 @@ class HomePage extends StatelessWidget {
         title: Text('Trang chủ'),
         centerTitle: true,
       ),
+      backgroundColor: Colors.amber[200],
       body: HomeWidget(),
       floatingActionButton: SpeedDial(
         animatedIcon: AnimatedIcons.menu_close,
@@ -31,7 +38,7 @@ class HomePage extends StatelessWidget {
             foregroundColor: Colors.white,
             backgroundColor: Colors.blue,
             onTap: () {
-              launch(('https://zalo.me/0903532938'));
+              launch('tel://0903532938');
             },
           ),
           SpeedDialChild(
@@ -41,7 +48,7 @@ class HomePage extends StatelessWidget {
             foregroundColor: Colors.white,
             backgroundColor: Colors.blue,
             onTap: () {
-              launch('tel://0903532938');
+              launch(('https://zalo.me/0903532938'));
             },
           ),
         ],
@@ -59,89 +66,270 @@ class HomeWidget extends StatefulWidget {
 
 class HomeStateWidget extends State<HomeWidget> {
   Widget titleSection = new Container(
-    padding: const EdgeInsets.all(10),
-    child: new Row(
-      children: <Widget>[
-        new Expanded(
-            child: new Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            new GridView.count(
-              padding: const EdgeInsets.all(5),
-              crossAxisCount: 3,
-              crossAxisSpacing: 5.0,
-              mainAxisSpacing: 5.0,
-              shrinkWrap: true,
-              children: <Widget>[
-                Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(
-                          'https://thoviet.com.vn/wp-content/uploads/2019/10/fix_14.jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(5.0),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(
-                          'https://thoviet.com.vn/wp-content/uploads/2019/10/fix_11.jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(5.0),
-                    ),
-                  ),
-                  // padding: const EdgeInsets.all(8),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(
-                          'https://thoviet.com.vn/wp-content/uploads/2019/10/fix_15.jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(5.0),
-                    ),
-                  ),
-                  // padding: const EdgeInsets.all(8),
-                ),
-              ],
-            ),
-            new Text(
-              'Bên cạnh các dịch vụ về điện, Thợ Việt còn cung cấp các dịch vụ khác như:',
-              textAlign: TextAlign.start,
-              style: new TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
-            new Text('_ Dịch vụ sửa chữa vệ sinh lắp đặt máy lạnh.\n' +
-                '_ Sửa chữa lắp đặt thi công ống nước.\n' +
-                '_ vệ sinh bể nước bồn nước, bể chứa nước sinh hoạt  mọi dung tích.')
-          ],
-        ))
-      ],
+    width: 400,
+    height: 200,
+    decoration: BoxDecoration(
+      image: DecorationImage(
+        image: NetworkImage(
+            'https://thoviet.com.vn/wp-content/uploads/2020/01/tapthe-2-e1597391698731.png'),
+        fit: BoxFit.cover,
+      ),
+      borderRadius: BorderRadius.all(
+        Radius.circular(10.0),
+      ),
     ),
+    padding: const EdgeInsets.all(5),
   );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: new ListView(
+        padding: const EdgeInsets.all(10),
         children: <Widget>[
-          new Image.asset(
-            'lib/images/hinhdasua.png',
-            width: 400,
-            height: 200,
-            fit: BoxFit.cover,
+          titleSection,
+          new GridView.count(
+            padding: const EdgeInsets.all(5),
+            crossAxisCount: 3,
+            crossAxisSpacing: 5.0,
+            mainAxisSpacing: 5.0,
+            shrinkWrap: true,
+            children: <Widget>[
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ThoDien()),
+                    );
+                  },
+                  splashColor: Colors.green[200],
+                  child: Center(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        new Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Image.asset(
+                                'lib/images/icon_tho.png',
+                                width: 80,
+                                height: 80,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(5),
+                              child: Text('Thợ Điện'),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ThoDienLanh()),
+                    );
+                  },
+                  splashColor: Colors.green[200],
+                  child: Center(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        new Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Image.asset(
+                                'lib/images/icon_tho.png',
+                                width: 80,
+                                height: 80,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(5),
+                              child: Text('Thợ Điện Lạnh'),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ThoMoc()),
+                    );
+                  },
+                  splashColor: Colors.green[200],
+                  child: Center(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        new Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Image.asset(
+                                'lib/images/icon_tho.png',
+                                width: 80,
+                                height: 80,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(5),
+                              child: Text('Thợ Mộc'),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ThoThongNghet()),
+                    );
+                  },
+                  splashColor: Colors.green[200],
+                  child: Center(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        new Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Image.asset(
+                                'lib/images/icon_tho.png',
+                                width: 80,
+                                height: 80,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(5),
+                              child: Text('Thông Nghẹt'),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ThoChongTham()),
+                    );
+                  },
+                  splashColor: Colors.green[200],
+                  child: Center(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        new Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Image.asset(
+                                'lib/images/icon_tho.png',
+                                width: 80,
+                                height: 80,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(5),
+                              child: Text('Chống Thấm'),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ThoDien()),
+                    );
+                  },
+                  splashColor: Colors.green[200],
+                  child: Center(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        new Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Image.asset(
+                                'lib/images/ThoKhac.png',
+                                width: 80,
+                                height: 80,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(5),
+                              child: Text('DV Khác'),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-          titleSection
         ],
       ),
     );
