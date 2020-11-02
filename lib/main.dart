@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'Views/home.dart';
-import 'package:intent/intent.dart' as android_intent;
-import 'package:intent/action.dart' as android_action;
+// import 'package:intent/intent.dart' as android_intent;
+// import 'package:intent/action.dart' as android_action;
 //import static android.Manifest.permission.CALL_PHONE;
 
 void main() => runApp(MyApp());
@@ -20,6 +20,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: _title,
       home: HomePage(),
+      theme: ThemeData(
+          primarySwatch: Colors.deepPurple,
+          textTheme: TextTheme(
+              bodyText2: TextStyle(
+            fontSize: 16.0,
+            fontFamily: 'arial',
+            color: Colors.black,
+          ))),
     );
   }
 }

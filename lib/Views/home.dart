@@ -3,7 +3,6 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:flutter_thoviet/Views/thoChongTham.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_thoviet/Views/thoDien.dart';
-import 'package:flutter_thoviet/Views/thoDienNuoc.dart';
 import 'package:flutter_thoviet/Views/thoMoc.dart';
 import 'package:flutter_thoviet/Views/thoDienLanh.dart';
 import 'package:flutter_thoviet/Views/thongNghet.dart';
@@ -107,28 +106,9 @@ class HomeStateWidget extends State<HomeWidget> {
                   },
                   splashColor: Colors.green[200],
                   child: Center(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        new Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(6),
-                              child: Image.asset(
-                                'lib/images/icon_tho.png',
-                                width: 80,
-                                height: 80,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(5),
-                              child: Text('Thợ Điện'),
-                            )
-                          ],
-                        ),
-                      ],
+                    child: DVTV(
+                      urlDVTV: 'lib/images/icon_tho.png',
+                      titleDVTV: 'Thợ Điện',
                     ),
                   ),
                 ),
@@ -146,28 +126,9 @@ class HomeStateWidget extends State<HomeWidget> {
                   },
                   splashColor: Colors.green[200],
                   child: Center(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        new Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(6),
-                              child: Image.asset(
-                                'lib/images/icon_tho.png',
-                                width: 80,
-                                height: 80,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(5),
-                              child: Text('Thợ Điện Lạnh'),
-                            )
-                          ],
-                        ),
-                      ],
+                    child: DVTV(
+                      urlDVTV: 'lib/images/icon_tho.png',
+                      titleDVTV: 'Thợ Điện Lạnh',
                     ),
                   ),
                 ),
@@ -185,28 +146,9 @@ class HomeStateWidget extends State<HomeWidget> {
                   },
                   splashColor: Colors.green[200],
                   child: Center(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        new Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(6),
-                              child: Image.asset(
-                                'lib/images/icon_tho.png',
-                                width: 80,
-                                height: 80,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(5),
-                              child: Text('Thợ Mộc'),
-                            )
-                          ],
-                        ),
-                      ],
+                    child: DVTV(
+                      urlDVTV: 'lib/images/icon_tho.png',
+                      titleDVTV: 'Thợ Mộc',
                     ),
                   ),
                 ),
@@ -224,28 +166,9 @@ class HomeStateWidget extends State<HomeWidget> {
                   },
                   splashColor: Colors.green[200],
                   child: Center(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        new Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(6),
-                              child: Image.asset(
-                                'lib/images/icon_tho.png',
-                                width: 80,
-                                height: 80,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(5),
-                              child: Text('Thông Nghẹt'),
-                            )
-                          ],
-                        ),
-                      ],
+                    child: DVTV(
+                      urlDVTV: 'lib/images/icon_tho.png',
+                      titleDVTV: 'Thông Nghẹt',
                     ),
                   ),
                 ),
@@ -263,28 +186,9 @@ class HomeStateWidget extends State<HomeWidget> {
                   },
                   splashColor: Colors.green[200],
                   child: Center(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        new Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(6),
-                              child: Image.asset(
-                                'lib/images/icon_tho.png',
-                                width: 80,
-                                height: 80,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(5),
-                              child: Text('Chống Thấm'),
-                            )
-                          ],
-                        ),
-                      ],
+                    child: DVTV(
+                      urlDVTV: 'lib/images/icon_tho.png',
+                      titleDVTV: 'Chống Thấm',
                     ),
                   ),
                 ),
@@ -295,35 +199,13 @@ class HomeStateWidget extends State<HomeWidget> {
                 ),
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ThoDien()),
-                    );
+                    _dVkhac(context);
                   },
                   splashColor: Colors.green[200],
                   child: Center(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        new Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(6),
-                              child: Image.asset(
-                                'lib/images/ThoKhac.png',
-                                width: 80,
-                                height: 80,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(5),
-                              child: Text('DV Khác'),
-                            )
-                          ],
-                        ),
-                      ],
+                    child: DVTV(
+                      urlDVTV: 'lib/images/ThoKhac.png',
+                      titleDVTV: 'Thợ Khác',
                     ),
                   ),
                 ),
@@ -332,6 +214,192 @@ class HomeStateWidget extends State<HomeWidget> {
           ),
         ],
       ),
+    );
+  }
+}
+
+void _dVkhac(context) {
+  showModalBottomSheet(
+    context: context,
+    builder: (BuildContext bc) {
+      return Container(
+        clipBehavior: Clip.none,
+        color: Color(0xFF737373),
+        height: 500,
+        child: new Container(
+          child: Container(
+              decoration: new BoxDecoration(
+                color: Colors.white,
+                borderRadius: new BorderRadius.only(
+                  topLeft: const Radius.circular(15),
+                  topRight: const Radius.circular(15),
+                ),
+              ),
+              child: new Row(
+                children: <Widget>[
+                  new Expanded(
+                      child: new Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(150, 5, 150, 5),
+                        child: new Divider(
+                          height: 20,
+                          color: Colors.white,
+                        ),
+                      ),
+                      new GridView.count(
+                        padding: const EdgeInsets.all(10),
+                        crossAxisCount: 3,
+                        crossAxisSpacing: 5.0,
+                        mainAxisSpacing: 5.0,
+                        shrinkWrap: true,
+                        children: <Widget>[
+                          Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ThoDien()),
+                                );
+                              },
+                              splashColor: Colors.green[200],
+                              child: Center(
+                                child: DVTV(
+                                  urlDVTV: 'lib/images/icon_tho.png',
+                                  titleDVTV: 'Thợ Điện',
+                                ),
+                              ),
+                            ),
+                          ),
+                          Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ThoDienLanh()),
+                                );
+                              },
+                              splashColor: Colors.green[200],
+                              child: Center(
+                                child: DVTV(
+                                  urlDVTV: 'lib/images/icon_tho.png',
+                                  titleDVTV: 'Thợ Điện Lạnh',
+                                ),
+                              ),
+                            ),
+                          ),
+                          Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ThoMoc()),
+                                );
+                              },
+                              splashColor: Colors.green[200],
+                              child: Center(
+                                child: DVTV(
+                                  urlDVTV: 'lib/images/icon_tho.png',
+                                  titleDVTV: 'Thợ Mộc',
+                                ),
+                              ),
+                            ),
+                          ),
+                          Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ThoThongNghet()),
+                                );
+                              },
+                              splashColor: Colors.green[200],
+                              child: Center(
+                                child: DVTV(
+                                  urlDVTV: 'lib/images/icon_tho.png',
+                                  titleDVTV: 'Thông Nghẹt',
+                                ),
+                              ),
+                            ),
+                          ),
+                          Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ThoChongTham()),
+                                );
+                              },
+                              splashColor: Colors.green[200],
+                              child: Center(
+                                child: DVTV(
+                                  urlDVTV: 'lib/images/icon_tho.png',
+                                  titleDVTV: 'Chống Thấm',
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ))
+                ],
+              )),
+        ),
+      );
+    },
+  );
+}
+
+class DVTV extends StatelessWidget {
+  DVTV({this.urlDVTV, this.titleDVTV});
+
+  final String urlDVTV;
+  final String titleDVTV;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        new Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(6),
+              child: Image.asset(
+                urlDVTV,
+                width: 80,
+                height: 80,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(5),
+              child: Text(titleDVTV),
+            )
+          ],
+        ),
+      ],
     );
   }
 }

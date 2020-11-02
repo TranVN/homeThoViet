@@ -99,101 +99,30 @@ class _ThoChongThamWidgetState extends State<ThoChongThamWidget> {
                 fontSize: 22,
               ),
             ),
-            Card(
-              clipBehavior: Clip.antiAlias,
-              child: Column(
-                children: [
-                  Image.network(
-                    'https://thoviet.com.vn/wp-content/uploads/2020/07/2407-20-Chong-tham-san-thuong-2.jpg',
-                    fit: BoxFit.cover,
-                    width: 400,
-                    height: 200,
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'CHỐNG THẤM SÂN THƯỢNG',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(16.0, 5.0, 16.0, 5.0),
-                    child: Text(
-                      '+ Nhận thi công chống thấm sân thượng đã lót gạch.\n' +
-                          '+ Chống thấm sân thượng chưa hoàn thiện.\n' +
-                          '+ Chống thấm sân thượng bằng sơn chống thấm.',
-                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                    ),
-                  ),
-                ],
-              ),
+            DVChongTham(
+              urlDVCT:
+                  'https://thoviet.com.vn/wp-content/uploads/2020/07/2407-20-Chong-tham-san-thuong-2.jpg',
+              titleDVCT: 'CHỐNG THẤM SÂN THƯỢNG',
+              contentDVCT:
+                  '+ Nhận thi công chống thấm sân thượng đã lót gạch.\n' +
+                      '+ Chống thấm sân thượng chưa hoàn thiện.\n' +
+                      '+ Chống thấm sân thượng bằng sơn chống thấm.',
             ),
-            Card(
-              clipBehavior: Clip.antiAlias,
-              child: Column(
-                children: [
-                  Image.network(
-                    'https://thoviet.com.vn/wp-content/uploads/2020/07/2407-20-sua-chua-tham-tuong-nha-A-Linh-8.jpg',
-                    fit: BoxFit.cover,
-                    width: 400,
-                    height: 200,
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'XỬ LÝ CHỐNG THẤM TRONG NHÀ TẮM',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(16.0, 5.0, 16.0, 5.0),
-                    child: Text(
-                      '+ Xử lý thấm nước do hộp gen.\n' +
-                          '+ Xử lý thấm lỗ thoát sàn nhà tắm.\n' +
-                          '+ Làm lại gạch nền xử lý thấm.',
-                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                    ),
-                  ),
-                ],
-              ),
+            DVChongTham(
+              urlDVCT:
+                  'https://thoviet.com.vn/wp-content/uploads/2020/07/2407-20-sua-chua-tham-tuong-nha-A-Linh-8.jpg',
+              titleDVCT: 'XỬ LÝ CHỐNG THẤM TRONG NHÀ TẮM',
+              contentDVCT: '+ Xử lý thấm nước do hộp gen.\n' +
+                  '+ Xử lý thấm lỗ thoát sàn nhà tắm.\n' +
+                  '+ Làm lại gạch nền xử lý thấm.',
             ),
-            Card(
-              clipBehavior: Clip.antiAlias,
-              child: Column(
-                children: [
-                  Image.network(
-                    'https://thoviet.com.vn/wp-content/uploads/2020/07/chongthamtuongnha.jpg',
-                    fit: BoxFit.cover,
-                    width: 400,
-                    height: 200,
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'CHỐNG THẤM TƯỜNG NHÀ ',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-                    child: Text(
-                      '+ Thi công sơn chống thấm. Xử lý nứt chân chim tường nhà.\n' +
-                          '+ Và các tình trạng thấm khác.',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                    ),
-                  ),
-                ],
-              ),
+            DVChongTham(
+              urlDVCT:
+                  'https://thoviet.com.vn/wp-content/uploads/2020/07/chongthamtuongnha.jpg',
+              titleDVCT: 'CHỐNG THẤM TƯỜNG NHÀ',
+              contentDVCT:
+                  '+ Thi công sơn chống thấm. Xử lý nứt chân chim tường nhà.\n' +
+                      '+ Và các tình trạng thấm khác.',
             ),
             new Text(
               "Bảng Giá Thi Công Chống Thấm",
@@ -263,6 +192,20 @@ class _ThoChongThamWidgetState extends State<ThoChongThamWidget> {
               subtitleCT: 'Giá từ: 370,000 đ/m2',
             ),
             new Text(
+              'Một số nguyên nhân khiến tường nhà bạn bị thấm:',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            new Text('– Tường nhà bị thấm do trời mưa nhiều, lượng nước ngấm vào tường lớn. Bản chất của xi măng hút nước mạnh và có những mao quản (khoảng cách giữa các hạt) có đường kính khoảng từ 20 – 40 micromet. Do đó, khi bề mặt tường tiếp xúc với nước, những khe hở mao quản sẽ bị nước xâm nhập vào bên trong gây ra hiện tượng thấm.\n' +
+                '– Do vị trí các ống thoát nước sàn giáp lai tường nhà, rãnh nước trên sàn mái… Nước và hơi ẩm từ những nơi này có thể theo các vết nứt, mao mạch rỗng của tường thấm sâu vào bên trong. Theo thời gian, tường nhà bị nước thấm vào tạo nên từng mảng loang lổ với lớp sơn xuống cấp.\n' +
+                '– Tường nhà xuống cấp do thời gian dài sử dụng, những vết nứt, bong tróc xuất hiện làm cho nước và hơi ẩm thấm sâu vào bên trong tường, đặc biệt khi vào mùa mưa tình trạng này lại diễn ra trầm trọng hơn.\n' +
+                '– Trong quá trình xây dựng, người thợ sử dụng cốt liệu bê tông không đúng quy chuẩn, hoặc không đủ vữa xi măng.\n' +
+                '– Nguyên nhân trực tiếp nhất vẫn là công trình không chủ động sử dụng những phương pháp ngăn thấm dột ngay từ những ngày đầu xây dựng.\n' +
+                'Ngoài ra còn có nhiều nguyên nhân khách quan khác có thể dẫn đến việc tường nhà bạn bị thấm. Việc cần thiết là xử lý triệt để căn nguyên của việc bị thấm.'),
+            new Text(
               'Công ty TNHH Dịch Vụ Kỹ Thuật Thợ Việt',
               textAlign: TextAlign.center,
               style: TextStyle(
@@ -275,15 +218,12 @@ class _ThoChongThamWidgetState extends State<ThoChongThamWidget> {
               '– Với đội ngũ kỹ thuật viên có trình độ, tận tình, trang bị đầy đủ công cụ hiện đại đảm bảo cho quý khách hàng được phục vụ nhanh chóng, chất lượng…\n' +
                   '– Tất cả các thiết bị lắp đặt, sửa chữa sẽ được bảo hành dài hạn\n' +
                   '– Mạng lưới phục vụ rộng khắp thành phố Hồ Chí Minh.',
-              style: TextStyle(fontSize: 14),
             ),
             new Text(
               'Thợ Việt với đội ngũ thợ chống thấm, điện lạnh, điện nước, vệ sinh,... lành nghề, uy tín, chất lượng, phục vụ nhiệt tình chu đáo, giá cả phải chăng.',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontStyle: FontStyle.italic,
-                fontSize: 14,
-              ),
+                  fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
             ),
           ],
         ))
@@ -321,6 +261,7 @@ class TheBangGiaChongTham extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: new Card(
+        color: Colors.grey[200],
         clipBehavior: Clip.antiAlias,
         child: Column(
           children: [
@@ -336,13 +277,54 @@ class TheBangGiaChongTham extends StatelessWidget {
                 subtitleCT,
                 textAlign: TextAlign.right,
                 style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.blue,
                     fontStyle: FontStyle.italic,
-                    fontSize: 16),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18),
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class DVChongTham extends StatelessWidget {
+  DVChongTham({this.urlDVCT, this.titleDVCT, this.contentDVCT});
+  final String urlDVCT;
+  final String titleDVCT;
+  final String contentDVCT;
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        children: [
+          Image.network(
+            urlDVCT,
+            fit: BoxFit.cover,
+            width: 400,
+            height: 200,
+          ),
+          ListTile(
+            title: Text(
+              titleDVCT,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16.0, 5.0, 16.0, 5.0),
+            child: Text(
+              contentDVCT,
+              style: TextStyle(color: Colors.black.withOpacity(0.6)),
+            ),
+          ),
+        ],
       ),
     );
   }
