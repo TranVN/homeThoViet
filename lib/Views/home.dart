@@ -6,6 +6,7 @@ import 'package:flutter_thoviet/Views/thoDien.dart';
 import 'package:flutter_thoviet/Views/thoMoc.dart';
 import 'package:flutter_thoviet/Views/thoDienLanh.dart';
 import 'package:flutter_thoviet/Views/thongNghet.dart';
+import 'package:flutter_thoviet/Views/thoSuaMayLanh.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -86,6 +87,7 @@ class HomeStateWidget extends State<HomeWidget> {
         padding: const EdgeInsets.all(10),
         children: <Widget>[
           titleSection,
+          Padding(padding: EdgeInsets.all(5)),
           new GridView.count(
             padding: const EdgeInsets.all(5),
             crossAxisCount: 3,
@@ -96,6 +98,7 @@ class HomeStateWidget extends State<HomeWidget> {
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: Colors.grey[200]),
                 ),
                 child: InkWell(
                   onTap: () {
@@ -116,6 +119,7 @@ class HomeStateWidget extends State<HomeWidget> {
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: Colors.grey[200]),
                 ),
                 child: InkWell(
                   onTap: () {
@@ -136,6 +140,7 @@ class HomeStateWidget extends State<HomeWidget> {
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: Colors.grey[200]),
                 ),
                 child: InkWell(
                   onTap: () {
@@ -156,6 +161,7 @@ class HomeStateWidget extends State<HomeWidget> {
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: Colors.grey[200]),
                 ),
                 child: InkWell(
                   onTap: () {
@@ -176,6 +182,7 @@ class HomeStateWidget extends State<HomeWidget> {
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: Colors.grey[200]),
                 ),
                 child: InkWell(
                   onTap: () {
@@ -196,6 +203,7 @@ class HomeStateWidget extends State<HomeWidget> {
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: Colors.grey[200]),
                 ),
                 child: InkWell(
                   onTap: () {
@@ -243,10 +251,20 @@ void _dVkhac(context) {
                       Padding(
                         padding: EdgeInsets.fromLTRB(150, 5, 150, 5),
                         child: new Divider(
-                          height: 20,
-                          color: Colors.white,
+                          height: 15.0,
+                          color: Colors.grey[300],
+                          indent: 5.0,
                         ),
                       ),
+                      Padding(
+                          padding: EdgeInsets.fromLTRB(10, 10, 260, 10),
+                          child: new Text(
+                            'Khám phá dịch vụ',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )),
                       new GridView.count(
                         padding: const EdgeInsets.all(10),
                         crossAxisCount: 3,
@@ -257,20 +275,21 @@ void _dVkhac(context) {
                           Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
+                              side: BorderSide(color: Colors.grey[200]),
                             ),
                             child: InkWell(
                               onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => ThoDien()),
+                                      builder: (context) => ThoSuaMayLanh()),
                                 );
                               },
                               splashColor: Colors.green[200],
                               child: Center(
                                 child: DVTV(
                                   urlDVTV: 'lib/images/icon_tho.png',
-                                  titleDVTV: 'Thợ Điện',
+                                  titleDVTV: 'Sửa Máy Lạnh',
                                 ),
                               ),
                             ),
@@ -278,6 +297,7 @@ void _dVkhac(context) {
                           Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
+                              side: BorderSide(color: Colors.grey[200]),
                             ),
                             child: InkWell(
                               onTap: () {
@@ -291,7 +311,7 @@ void _dVkhac(context) {
                               child: Center(
                                 child: DVTV(
                                   urlDVTV: 'lib/images/icon_tho.png',
-                                  titleDVTV: 'Thợ Điện Lạnh',
+                                  titleDVTV: 'VS Bể Nước',
                                 ),
                               ),
                             ),
@@ -299,6 +319,7 @@ void _dVkhac(context) {
                           Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
+                              side: BorderSide(color: Colors.grey[200]),
                             ),
                             child: InkWell(
                               onTap: () {
@@ -312,7 +333,7 @@ void _dVkhac(context) {
                               child: Center(
                                 child: DVTV(
                                   urlDVTV: 'lib/images/icon_tho.png',
-                                  titleDVTV: 'Thợ Mộc',
+                                  titleDVTV: 'Vệ Sinh NLMT',
                                 ),
                               ),
                             ),
@@ -320,6 +341,7 @@ void _dVkhac(context) {
                           Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
+                              side: BorderSide(color: Colors.grey[200]),
                             ),
                             child: InkWell(
                               onTap: () {
@@ -333,28 +355,7 @@ void _dVkhac(context) {
                               child: Center(
                                 child: DVTV(
                                   urlDVTV: 'lib/images/icon_tho.png',
-                                  titleDVTV: 'Thông Nghẹt',
-                                ),
-                              ),
-                            ),
-                          ),
-                          Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ThoChongTham()),
-                                );
-                              },
-                              splashColor: Colors.green[200],
-                              child: Center(
-                                child: DVTV(
-                                  urlDVTV: 'lib/images/icon_tho.png',
-                                  titleDVTV: 'Chống Thấm',
+                                  titleDVTV: 'Dò Nước Rò Rỉ',
                                 ),
                               ),
                             ),

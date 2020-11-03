@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       title: _title,
       home: HomePage(),
       theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
+          primarySwatch: Colors.lightBlue,
           textTheme: TextTheme(
               bodyText2: TextStyle(
             fontSize: 16.0,
