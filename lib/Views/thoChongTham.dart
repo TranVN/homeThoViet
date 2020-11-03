@@ -38,59 +38,25 @@ class _ThoChongThamWidgetState extends State<ThoChongThamWidget> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Card(
-              child: ListTile(
-                leading: Image.network(
+            KDDV(
+              urlImg:
                   'https://thoviet.com.vn/wp-content/uploads/2020/07/premium-quality.png',
-                  width: 60,
-                  height: 60,
-                  fit: BoxFit.cover,
-                ),
-                title: const Text(
-                  'CHẤT LƯỢNG',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                subtitle: Text(
-                  'Đảm cao chất lượng cao nhất cho mọi công trình.',
-                  style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                ),
-              ),
+              titleKDDV: 'CHẤT LƯỢNG',
+              subKDDV: 'Đảm cao chất lượng cao nhất cho mọi công trình.',
             ),
-            Card(
-              child: ListTile(
-                leading: Image.network(
+            KDDV(
+              urlImg:
                   'https://thoviet.com.vn/wp-content/uploads/2020/07/reputation.png',
-                  width: 60,
-                  height: 60,
-                  fit: BoxFit.cover,
-                ),
-                title: const Text(
-                  'UY TÍN',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                subtitle: Text(
+              titleKDDV: 'UY TÍN',
+              subKDDV:
                   'Công Ty TNHH dịch vụ kỹ thuật Thợ Việt. Được thành lập từ năm 2011. Với đội ngũ phủ rộng khắp TP Hồ Chí Minh.',
-                  style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                ),
-              ),
             ),
-            Card(
-              child: ListTile(
-                leading: Image.network(
+            KDDV(
+              urlImg:
                   'https://thoviet.com.vn/wp-content/uploads/2020/07/efficiency.png',
-                  width: 60,
-                  height: 60,
-                  fit: BoxFit.cover,
-                ),
-                title: const Text(
-                  'HIỆU QUẢ CAO',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                subtitle: Text(
+              titleKDDV: 'HIỆU QUẢ CAO',
+              subKDDV:
                   'Với tinh thần trách nghiệm cao, thợ chống thấm Thợ Việtluôn hướng tới dịch vụ nhanh chóng, hiệu quả cao.',
-                  style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                ),
-              ),
             ),
             new Text(
               "Dịch vụ chống thấm của Thợ Việt",
@@ -325,6 +291,34 @@ class DVChongTham extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class KDDV extends StatelessWidget {
+  KDDV({this.urlImg, this.titleKDDV, this.subKDDV});
+  final String urlImg;
+  final String titleKDDV;
+  final String subKDDV;
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: ListTile(
+        leading: Image.network(
+          urlImg,
+          width: 60,
+          height: 60,
+          fit: BoxFit.cover,
+        ),
+        title: Text(
+          titleKDDV,
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
+        subtitle: Text(
+          subKDDV,
+          style: TextStyle(color: Colors.black.withOpacity(0.6)),
+        ),
       ),
     );
   }

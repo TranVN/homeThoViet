@@ -12,19 +12,17 @@ void main() => runApp(MyApp());
 
 /// This is the main application widget.
 class MyApp extends StatelessWidget {
-  static const String _title = 'Flutter Code Sample';
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: _title,
+      title: 'Thợ Sửa Máy Lạnh',
       home: HomePage(),
       theme: ThemeData(
           primarySwatch: Colors.lightBlue,
           textTheme: TextTheme(
               bodyText2: TextStyle(
-            fontSize: 16.0,
+            fontSize: 14.0,
             fontFamily: 'arial',
             color: Colors.black,
           ))),
@@ -57,7 +55,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               padding: EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
               child: Icon(Icons.pin_drop, size: 24.0),
             ),
-            Text('Place Tracker'),
+            Text('Thợ Việt'),
           ],
         ),
       ),

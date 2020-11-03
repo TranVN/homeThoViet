@@ -1,4 +1,4 @@
-package com.example.flutter_thoviet
+package com.thoviet.app
 
 import io.flutter.embedding.android.FlutterActivity
 

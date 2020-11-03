@@ -7,6 +7,10 @@ import 'package:flutter_thoviet/Views/thoMoc.dart';
 import 'package:flutter_thoviet/Views/thoDienLanh.dart';
 import 'package:flutter_thoviet/Views/thongNghet.dart';
 import 'package:flutter_thoviet/Views/thoSuaMayLanh.dart';
+import 'package:flutter_thoviet/Views/thoSuaNha.dart';
+import 'package:flutter_thoviet/Views/vsBeNuoc.dart';
+import 'package:flutter_thoviet/Views/thoVSNLMT.dart';
+import 'package:flutter_thoviet/Views/thoDoNuocRoRi.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -15,7 +19,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Trang chủ'),
+        title: Text('Trang Chủ'),
         centerTitle: true,
       ),
       backgroundColor: Colors.amber[200],
@@ -236,136 +240,158 @@ void _dVkhac(context) {
         height: 500,
         child: new Container(
           child: Container(
-              decoration: new BoxDecoration(
-                color: Colors.white,
-                borderRadius: new BorderRadius.only(
-                  topLeft: const Radius.circular(15),
-                  topRight: const Radius.circular(15),
-                ),
+            decoration: new BoxDecoration(
+              color: Colors.white,
+              borderRadius: new BorderRadius.only(
+                topLeft: const Radius.circular(15),
+                topRight: const Radius.circular(15),
               ),
-              child: new Row(
-                children: <Widget>[
-                  new Expanded(
-                      child: new Column(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(150, 5, 150, 5),
-                        child: new Divider(
-                          height: 15.0,
-                          color: Colors.grey[300],
-                          indent: 5.0,
+            ),
+            child: new Row(
+              children: <Widget>[
+                new Expanded(
+                    child: new Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(150, 5, 150, 5),
+                      child: new Divider(
+                        height: 15.0,
+                        color: Colors.grey[300],
+                        indent: 5.0,
+                      ),
+                    ),
+                    Padding(
+                        padding: EdgeInsets.fromLTRB(10, 10, 260, 10),
+                        child: new Text(
+                          'Khám phá dịch vụ',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )),
+                    new GridView.count(
+                      padding: const EdgeInsets.all(10),
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 5.0,
+                      mainAxisSpacing: 5.0,
+                      shrinkWrap: true,
+                      children: <Widget>[
+                        Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: Colors.grey[200]),
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ThoSuaMayLanh()),
+                              );
+                            },
+                            splashColor: Colors.green[200],
+                            child: Center(
+                              child: DVTV(
+                                urlDVTV: 'lib/images/icon_tho.png',
+                                titleDVTV: 'Sửa Máy Lạnh',
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
-                      Padding(
-                          padding: EdgeInsets.fromLTRB(10, 10, 260, 10),
-                          child: new Text(
-                            'Khám phá dịch vụ',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )),
-                      new GridView.count(
-                        padding: const EdgeInsets.all(10),
-                        crossAxisCount: 3,
-                        crossAxisSpacing: 5.0,
-                        mainAxisSpacing: 5.0,
-                        shrinkWrap: true,
-                        children: <Widget>[
-                          Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              side: BorderSide(color: Colors.grey[200]),
-                            ),
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ThoSuaMayLanh()),
-                                );
-                              },
-                              splashColor: Colors.green[200],
-                              child: Center(
-                                child: DVTV(
-                                  urlDVTV: 'lib/images/icon_tho.png',
-                                  titleDVTV: 'Sửa Máy Lạnh',
-                                ),
+                        Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: Colors.grey[200]),
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => VSBN()),
+                              );
+                            },
+                            splashColor: Colors.green[200],
+                            child: Center(
+                              child: DVTV(
+                                urlDVTV: 'lib/images/icon_tho.png',
+                                titleDVTV: 'VS Bể Nước',
                               ),
                             ),
                           ),
-                          Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              side: BorderSide(color: Colors.grey[200]),
-                            ),
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ThoDienLanh()),
-                                );
-                              },
-                              splashColor: Colors.green[200],
-                              child: Center(
-                                child: DVTV(
-                                  urlDVTV: 'lib/images/icon_tho.png',
-                                  titleDVTV: 'VS Bể Nước',
-                                ),
+                        ),
+                        Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: Colors.grey[200]),
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => VSNLMT()),
+                              );
+                            },
+                            splashColor: Colors.green[200],
+                            child: Center(
+                              child: DVTV(
+                                urlDVTV: 'lib/images/icon_tho.png',
+                                titleDVTV: 'Vệ Sinh NLMT',
                               ),
                             ),
                           ),
-                          Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              side: BorderSide(color: Colors.grey[200]),
-                            ),
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ThoMoc()),
-                                );
-                              },
-                              splashColor: Colors.green[200],
-                              child: Center(
-                                child: DVTV(
-                                  urlDVTV: 'lib/images/icon_tho.png',
-                                  titleDVTV: 'Vệ Sinh NLMT',
-                                ),
+                        ),
+                        Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: Colors.grey[200]),
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DoNuocRoRi()),
+                              );
+                            },
+                            splashColor: Colors.green[200],
+                            child: Center(
+                              child: DVTV(
+                                urlDVTV: 'lib/images/icon_tho.png',
+                                titleDVTV: 'Dò Nước Rò Rỉ',
                               ),
                             ),
                           ),
-                          Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              side: BorderSide(color: Colors.grey[200]),
-                            ),
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ThoThongNghet()),
-                                );
-                              },
-                              splashColor: Colors.green[200],
-                              child: Center(
-                                child: DVTV(
-                                  urlDVTV: 'lib/images/icon_tho.png',
-                                  titleDVTV: 'Dò Nước Rò Rỉ',
-                                ),
+                        ),
+                        Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: Colors.grey[200]),
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ThoSuaNha()),
+                              );
+                            },
+                            splashColor: Colors.green[200],
+                            child: Center(
+                              child: DVTV(
+                                urlDVTV: 'lib/images/icon_tho.png',
+                                titleDVTV: 'Thợ Sửa Nhà',
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                    ],
-                  ))
-                ],
-              )),
+                        ),
+                      ],
+                    ),
+                  ],
+                ))
+              ],
+            ),
+          ),
         ),
       );
     },
@@ -389,8 +415,8 @@ class DVTV extends StatelessWidget {
               padding: const EdgeInsets.all(6),
               child: Image.asset(
                 urlDVTV,
-                width: 80,
-                height: 80,
+                width: 65,
+                height: 65,
                 fit: BoxFit.cover,
               ),
             ),
