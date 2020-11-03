@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'Views/home.dart';
+import 'package:flutter/services.dart';
 // import 'package:intent/intent.dart' as android_intent;
 // import 'package:intent/action.dart' as android_action;
 //import static android.Manifest.permission.CALL_PHONE;
@@ -11,11 +12,16 @@ import 'Views/home.dart';
 void main() => runApp(MyApp());
 
 /// This is the main application widget.
+
 class MyApp extends StatelessWidget {
   static const String _title = 'Flutter Code Sample';
 
   @override
   Widget build(BuildContext context) {
+    // screen rotation lock flutter https://medium.com/@greymag/flutter-orientation-lock-portrait-only-c98910ebd769
+    WidgetsFlutterBinding.ensureInitialized();
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+        .then((value) => runApp(MyApp()));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: _title,
